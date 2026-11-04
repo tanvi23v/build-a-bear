@@ -1,0 +1,1287 @@
+.centered-text{
+    text-align:center;
+    font-family: 'Times New Roman', Times, serif ;
+}
+
+
+.rectangle{
+    width:450px;
+    height:450px;
+    background-color: #E8A598;
+    border: 0px;
+    border-radius:25px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(10%,-45%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+:root{
+    --cream: #fffaf3;
+    --paper: #fffdf9;
+    --pink: #efb7ad;
+    --pink-light: #fce8e1;
+    --pink-dark: #d98f88;
+    --sage: #a6b49a;
+    --sage-light: #e8eddf;
+    --yellow: #f4d99e;
+    --brown: #775542;
+    --brown-light: #a88a75;
+    --border: #f0dfcf;
+    --shadow: 0 8px 30px rgba(119,85,66,0,07);
+    
+    --font-heading: "Quicksand", sans-serif;
+    --font-body: "Nunito", sans-serif;
+}
+* {
+    box-sizing:border-box;
+    margiv:0;
+    padding:0;
+}
+.html{
+    scroll-behavior:smooth;
+    scroll-padding-top:24px;
+}
+.body{
+    min-height: 100;
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: var(--font-body);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 4px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--brown);
+}
+
+/* 3. SUBTLE BACKGROUND DECORATION */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.25;
+  background-image: radial-gradient(
+    #d9bda4 0.7px,
+    transparent 0.7px
+  );
+  background-size: 22px 22px;
+}
+
+/* 4. HEADER AND NAVIGATION */
+
+.site-header {
+  text-align: center;
+  padding: 30px 20px 22px;
+  position: relative;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: clamp(27px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.brand-icon {
+  display: inline-block;
+  font-size: 38px;
+  animation: gentle-bounce 3s ease-in-out infinite;
+}
+
+.tagline {
+  margin-top: 3px;
+  color: var(--brown-light);
+  font-size: 15px;
+}
+
+.site-header nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.site-header nav a {
+  padding: 8px 17px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: rgba(255, 253, 249, 0.85);
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.site-header nav a:hover {
+  background: var(--pink-light);
+  transform: translateY(-2px);
+}
+
+/* 5. WELCOME SECTION */
+
+.welcome {
+  max-width: 850px;
+  margin: 20px auto 65px;
+  padding: 65px 25px;
+  text-align: center;
+  position: relative;
+}
+
+.welcome::before {
+  content: "✧";
+  position: absolute;
+  top: 35px;
+  left: 8%;
+  color: var(--yellow);
+  font-size: 43px;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.welcome::after {
+  content: "♡";
+  position: absolute;
+  right: 8%;
+  bottom: 35px;
+  color: var(--pink);
+  font-size: 40px;
+  transform: rotate(15deg);
+}
+
+.eyebrow {
+  display: block;
+  color: var(--pink-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.welcome h1 {
+  margin: 13px 0;
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 6vw, 65px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.welcome h1 em {
+  color: var(--pink-dark);
+  font-style: normal;
+}
+
+.welcome p {
+  max-width: 480px;
+  margin: 0 auto 24px;
+  color: var(--brown-light);
+  font-size: 16px;
+}
+
+/* 6. BUTTONS */
+
+.primary-button,
+.secondary-button,
+.reset-button {
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.primary-button {
+  background: var(--pink);
+  color: #704b3d;
+  box-shadow: 0 4px 0 #dca096;
+}
+
+.secondary-button {
+  background: var(--sage-light);
+  color: #52674a;
+  border: 1px solid #d4dfc9;
+}
+
+.reset-button {
+  background: var(--yellow);
+  color: var(--brown);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.reset-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(119, 85, 66, 0.12);
+}
+
+.primary-button:active,
+.secondary-button:active,
+.reset-button:active {
+  transform: translateY(0);
+}
+
+/* 7. SHARED PAGE SECTIONS */
+
+.page-section {
+  width: min(1120px, calc(100% - 36px));
+  margin: 0 auto 90px;
+}
+
+.section-heading {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.section-heading h2,
+.adoption-card h2 {
+  margin-top: 7px;
+  font-family: var(--font-heading);
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.section-heading p {
+  margin-top: 5px;
+  color: var(--brown-light);
+  font-size: 14px;
+}
+
+/* 8. MAIN STUDIO LAYOUT */
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 23px;
+  align-items: start;
+}
+
+.preview-card,
+.customizer {
+  min-width: 0;
+  border: 2px solid var(--border);
+  border-radius: 25px;
+  padding: 20px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  color: var(--brown-light);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+/* 9. BEAR PREVIEW STAGE */
+
+.bear-stage {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #f8e6db;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(255, 255, 255, 0.8),
+      transparent 50%
+    ),
+    linear-gradient(145deg, #fff0e7, #fbe3d8);
+}
+
+.decoration {
+  position: absolute;
+  color: #e8b77c;
+  font-size: 35px;
+  pointer-events: none;
+}
+
+.decoration-one {
+  top: 10%;
+  left: 10%;
+  animation: twinkle 3s infinite;
+}
+
+.decoration-two {
+  top: 22%;
+  right: 10%;
+  color: var(--pink);
+  transform: rotate(15deg);
+}
+
+.decoration-three {
+  bottom: 12%;
+  right: 12%;
+  animation: twinkle 4s infinite;
+}
+
+.bear-caption {
+  text-align: center;
+  padding: 15px 0 10px;
+}
+
+.bear-caption h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.bear-caption p {
+  color: var(--brown-light);
+  font-size: 13px;
+}
+
+/* 10. CSS TEDDY BEAR */
+
+.bear {
+  --fur: #b98760;
+  --muzzle: #f3d7b5;
+
+  width: 230px;
+  height: 305px;
+  flex: 0 0 auto;
+  position: relative;
+  margin-top: 35px;
+  transform-origin: 50% 80%;
+  animation: bear-float 3.5s ease-in-out infinite;
+}
+
+.bear-head {
+  position: absolute;
+  z-index: 4;
+  top: 32px;
+  left: 22px;
+  width: 186px;
+  height: 166px;
+  border: 4px solid #91694c;
+  border-radius: 48% 48% 46% 46%;
+  background: var(--fur);
+  box-shadow: inset -8px -6px 0 rgba(90, 52, 30, 0.07);
+}
+
+.bear-ear {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 76px;
+  height: 82px;
+  border: 4px solid #91694c;
+  border-radius: 50%;
+  background: var(--fur);
+}
+
+.ear-left {
+  left: 18px;
+  transform: rotate(-14deg);
+}
+
+.ear-right {
+  right: 18px;
+  transform: rotate(14deg);
+}
+
+.ear-inner {
+  position: absolute;
+  top: 10px;
+  width: 37px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--muzzle);
+  opacity: 0.9;
+}
+
+.inner-left {
+  left: 12px;
+  transform: rotate(-10deg);
+}
+
+.inner-right {
+  right: 12px;
+  transform: rotate(10deg);
+}
+
+.bear-body {
+  position: absolute;
+  z-index: 2;
+  top: 165px;
+  left: 47px;
+  width: 136px;
+  height: 125px;
+  border: 4px solid #91694c;
+  border-radius: 46% 46% 35% 35%;
+  background: var(--fur);
+  box-shadow: inset -8px -6px 0 rgba(90, 52, 30, 0.07);
+}
+
+.bear-arm {
+  position: absolute;
+  z-index: 5;
+  top: 185px;
+  width: 47px;
+  height: 83px;
+  border: 3px solid #91694c;
+  border-radius: 48%;
+  background: var(--fur);
+}
+
+.arm-left {
+  left: 21px;
+  transform: rotate(27deg);
+}
+
+.arm-right {
+  right: 21px;
+  transform: rotate(-27deg);
+}
+
+.bear-leg {
+  position: absolute;
+  z-index: 5;
+  top: 260px;
+  width: 75px;
+  height: 49px;
+  border: 3px solid #91694c;
+  border-radius: 50%;
+  background: var(--fur);
+}
+
+.leg-left { left: 34px; }
+.leg-right { right: 34px; }
+
+.bear-leg span {
+  position: absolute;
+  top: 12px;
+  left: 21px;
+  width: 26px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--muzzle);
+}
+
+.bear-eye {
+  position: absolute;
+  top: 65px;
+  width: 13px;
+  height: 17px;
+  border-radius: 50%;
+  background: #49372e;
+}
+
+.bear-eye::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+}
+
+.eye-left { left: 43px; }
+.eye-right { right: 43px; }
+
+.bear-blush {
+  position: absolute;
+  top: 95px;
+  width: 24px;
+  height: 13px;
+  border-radius: 50%;
+  background: #edaa9e;
+  opacity: 0.85;
+}
+
+.blush-left { left: 18px; }
+.blush-right { right: 18px; }
+
+.bear-muzzle {
+  position: absolute;
+  top: 91px;
+  left: 51px;
+  width: 76px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--muzzle);
+}
+
+.bear-nose {
+  position: absolute;
+  z-index: 2;
+  top: 100px;
+  left: 80px;
+  width: 18px;
+  height: 13px;
+  border-radius: 50% 50% 45% 45%;
+  background: #51372b;
+}
+
+.bear-mouth {
+  position: absolute;
+  z-index: 2;
+  top: 111px;
+  left: 88px;
+  width: 2px;
+  height: 12px;
+  background: #51372b;
+}
+
+.bear-mouth::before,
+.bear-mouth::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  width: 10px;
+  height: 8px;
+  border-bottom: 2px solid #51372b;
+}
+
+.bear-mouth::before {
+  right: 0;
+  border-radius: 0 0 50% 50%;
+  transform: rotate(20deg);
+}
+
+.bear-mouth::after {
+  left: 0;
+  border-radius: 0 0 50% 50%;
+  transform: rotate(-20deg);
+}
+
+/* 11. BEAR CLOTHING LAYERS */
+
+.bear-outfit {
+  position: absolute;
+  z-index: 6;
+  top: 174px;
+  left: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 142px;
+  height: 88px;
+  overflow: hidden;
+  border: 3px solid #d78984;
+  border-radius: 25px 25px 18px 18px;
+  background: #efaaa0;
+  font-size: 34px;
+  box-shadow: inset 0 -7px 0 rgba(120, 70, 60, 0.07);
+}
+
+.bear-outfit.outfit-overalls {
+  border-color: #7398b6;
+  border-radius: 17px;
+  background: #91b7d3;
+}
+
+.bear-outfit.outfit-dress {
+  border-color: #e8bd66;
+  border-radius: 35px 35px 15px 15px;
+  background: #f8d88e;
+}
+
+.bear-outfit.outfit-pajamas {
+  border-color: #b7a1d3;
+  border-radius: 25px;
+  background: #d6c7ed;
+}
+
+.bear-outfit.outfit-raincoat {
+  border-color: #82a98b;
+  border-radius: 20px;
+  background: #b7d9b7;
+}
+
+.bear-accessory {
+  position: absolute;
+  z-index: 8;
+  top: 4px;
+  left: 91px;
+  font-size: 34px;
+  filter: drop-shadow(0 2px 1px rgba(255,255,255,0.6));
+}
+
+/* 12. PREVIEW ACTIONS */
+
+.preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+preview-actions button {
+  flex: 1;
+  min-width: 130px;
+}
+
+.status-message {
+  min-height: 24px;
+  padding-top: 8px;
+  text-align: center;
+  color: #758b68;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* 13. CUSTOMIZER */
+
+.customizer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.custom-section h3 {
+  margin-bottom: 13px;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.custom-section h3 span {
+  margin-right: 6px;
+  color: var(--pink-dark);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.custom-section label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--brown-light);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.custom-section input,
+.custom-section select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: #fffaf5;
+  color: var(--brown);
+  transition: border-color 0.2s ease;
+}
+
+.custom-section input::placeholder {
+  color: #c1aa98;
+}
+
+.custom-section input:focus,
+.custom-section select:focus {
+  border-color: var(--sage);
+  outline: none;
+}
+
+/* 14. FUR COLOR SWATCHES */
+
+.fur-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.fur-swatch {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 auto;
+  border: 3px solid white;
+  border-radius: 50%;
+  outline: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    outline-color 0.2s ease;
+}
+
+.fur-swatch:hover {
+  transform: scale(1.1);
+}
+
+.fur-swatch.active {
+  outline-color: var(--brown);
+}
+
+.fur-swatch.active::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  text-shadow: 0 1px 3px #60422d;
+}
+
+/* 15. CLOTHING AND ACCESSORY CARDS */
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.option-card {
+  min-width: 0;
+  position: relative;
+  padding: 13px 5px;
+  border: 2px solid var(--border);
+  border-radius: 17px;
+  background: #fffdf9;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-3px);
+  background: #fff8f1;
+}
+
+.option-card.active {
+  border-color: var(--sage);
+  background: #f4f7ee;
+}
+
+.option-card.active::after {
+  content: "✓";
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: white;
+  font-size: 11px;
+}
+
+.option-emoji {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.option-name {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.reset-button {
+  align-self: stretch;
+  margin-top: 0;
+}
+
+/* 16. WARDROBE */
+
+.wardrobe-grid,
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.wardrobe-card {
+  overflow: hidden;
+  border: 2px solid var(--border);
+  border-radius: 22px;
+  background: var(--paper);
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.wardrobe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.wardrobe-art {
+  display: grid;
+  min-height: 140px;
+  place-items: center;
+  background: var(--pink-light);
+  font-size: 58px;
+}
+
+.wardrobe-card:nth-child(3n + 2) .wardrobe-art {
+  background: var(--sage-light);
+}
+
+.wardrobe-card:nth-child(3n) .wardrobe-art {
+  background: #fff0cf;
+}
+
+.wardrobe-info {
+  padding: 15px;
+}
+
+.wardrobe-info h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+}
+
+.wardrobe-info p {
+  margin: 5px 0 12px;
+  color: var(--brown-light);
+  font-size: 12px;
+}
+
+.wardrobe-info button {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #fffaf3;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.wardrobe-info button:hover {
+  background: var(--sage-light);
+}
+
+/* 17. SAVED BEAR COLLECTION */
+
+.collection-card {
+  padding: 15px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--paper);
+  transition: transform 0.2s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-3px);
+}
+
+.collection-art {
+  display: grid;
+  min-height: 110px;
+  margin-bottom: 12px;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--pink-light);
+  font-size: 43px;
+}
+
+.collection-card h3 {
+  overflow-wrap: anywhere;
+  font-family: var(--font-heading);
+  font-size: 17px;
+}
+
+.collection-card p {
+  margin: 4px 0 12px;
+  color: var(--brown-light);
+  font-size: 12px;
+}
+
+.collection-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.collection-actions button {
+  flex: 1;
+  padding: 8px 6px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fffaf3;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.collection-actions button:hover {
+  background: var(--sage-light);
+}
+
+.empty-collection {
+  grid-column: 1 / -1;
+  padding: 40px 20px;
+  border: 2px dashed var(--border);
+  border-radius: 20px;
+  color: var(--brown-light);
+  text-align: center;
+}
+
+.empty-collection span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+/* 18. ADOPTION CERTIFICATE */
+
+.adoption-card {
+  padding: 45px 25px;
+  border: 2px dashed #dfb9a2;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #fff0e6, #fffaf0);
+  text-align: center;
+}
+
+.adoption-card > p {
+  max-width: 450px;
+  margin: 10px auto 22px;
+  color: var(--brown-light);
+  font-size: 14px;
+}
+
+#certificateArea:empty {
+  display: none;
+}
+
+.certificate {
+  max-width: 500px;
+  margin: 25px auto 0;
+  padding: 28px 20px;
+  border: 4px double #d7b18f;
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.certificate h3 {
+  margin: 10px 0;
+  font-family: var(--font-heading);
+  font-size: 28px;
+}
+
+.certificate .certificate-bear {
+  margin: 10px 0;
+  font-size: 55px;
+}
+
+.certificate p {
+  margin: 6px 0;
+  color: var(--brown-light);
+}
+
+.certificate-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* 19. FOOTER */
+
+footer {
+  padding: 30px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--brown-light);
+  text-align: center;
+  font-size: 12px;
+}
+
+footer a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--pink-dark);
+  font-weight: 800;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* 20. ANIMATIONS */
+
+@keyframes bear-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-7px) rotate(1deg);
+  }
+}
+
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* 21. TABLET RESPONSIVENESS */
+
+@media (max-width: 900px) {
+  .studio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-card {
+    max-width: 620px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .customizer {
+    max-width: 620px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .welcome {
+    margin-bottom: 35px;
+  }
+
+  .page-section {
+    margin-bottom: 65px;
+  }
+}
+
+/* 22. MOBILE RESPONSIVENESS */
+
+@media (max-width: 560px) {
+  .site-header {
+    padding-top: 22px;
+  }
+
+  .brand {
+    font-size: 27px;
+    letter-spacing: -1px;
+  }
+
+  .brand-icon {
+    font-size: 30px;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+
+  .site-header nav {
+    gap: 7px;
+  }
+
+  .site-header nav a {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .welcome {
+    margin: 10px auto 35px;
+    padding: 45px 18px;
+  }
+
+  .welcome::before {
+    left: 2%;
+    font-size: 27px;
+  }
+
+  .welcome::after {
+    right: 3%;
+    font-size: 27px;
+  }
+
+  .welcome h1 {
+    letter-spacing: -1px;
+  }
+
+  .page-section {
+    width: calc(100% - 22px);
+    margin-bottom: 55px;
+  }
+
+  .preview-card,
+  .customizer {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .bear-stage {
+    min-height: 340px;
+  }
+
+  .bear {
+    transform: scale(0.9);
+    margin-top: 25px;
+  }
+
+  .option-grid {
+    gap: 7px;
+  }
+
+  .option-card {
+    padding: 10px 3px;
+  }
+
+  .option-emoji {
+    font-size: 25px;
+  }
+
+  .option-name {
+    font-size: 10px;
+  }
+
+  .fur-options {
+    gap: 12px;
+  }
+
+  .fur-swatch {
+    width: 34px;
+    height: 34px;
+  }
+
+  .wardrobe-grid,
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .wardrobe-art {
+    min-height: 105px;
+    font-size: 45px;
+  }
+
+  .wardrobe-info {
+    padding: 10px;
+  }
+
+  .adoption-card {
+    padding: 30px 15px;
+  }
+
+  .preview-actions {
+    flex-direction: column;
+  }
+
+  .preview-actions button {
+    width: 100%;
+  }
+}
+
+/* 23. ACCESSIBILITY: REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 24. PRINT-FRIENDLY CERTIFICATE */
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #certificateArea,
+  #certificateArea * {
+    visibility: visible;
+  }
+
+  #certificateArea {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+
+  .certificate {
+    max-width: 100%;
+    border: 5px double #b99674;
+    box-shadow: none;
+  }
+
+  .certificate-actions {
+    display: none;
+  }
+}

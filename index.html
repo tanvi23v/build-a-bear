@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>build-a-bear website
+        <style>
+    
+         .page-title {
+            font-family: cursive; 
+            font-size: 32px;
+            color: #333333;
+             }
+         </style> 
+         </title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body class="main">
+       <header>
+
+       </header>
+       <main>
+         <h1>
+            <p class="centered-text">build-a-bear</p>
+         </h1>
+         <body style="background-color:#FFF9F2;">
+           <div class="rectangle">
+            <h2> </h2>
+           </div>
+           <div class="bear-stage">
+            <div id="bear" class="bear">
+                 
+            </div>
+           </div>
+
+         
+      </body>
+      <body>
+        <header class="site-header">
+            <a class="brand" href="#" aria-label="Little Bear Studio home">
+                <span> little bear studio</span>
+            </a>
+            <p class="tagline">a little friend,made by you ♡</p>
+            <nav aria-label="Main navigation">
+                <a href="#studio">Create</a>
+                <a href="#wardrobe">Wardrobe</a>
+                <a href="#collection">My bears</a>
+
+            </nav>
+        </header>
+        <main>
+            <section class="welcome" id="welcome">
+                <span class="eyebrow">YOUR VERY OWN LITTLE FRIEND</span>
+                <h1>Pick a color, find an outfit, and give your new friend a name.</h1>
+                <button class="primary-button" id="startButton">
+                    Let's make a bear ✨
+                </button>
+            </section>
+            <section class="studio page-section" id="studio">
+                <div class="section-heading">
+                    <span class="eyebrow">THE WORKSHOP</span>
+                    <h2>Meet your new friend</h2>
+                </div>
+                <div class="bear-stage" id="bearStage">
+                    <span class="decoration decoration-one">⟡</span>
+                    <span class="decoration decoration-two">♡</span>
+                    <span class="decoration decoration-three">⋆</span>
+
+                    <div class="bear" id="bear">
+                        <div class="bear-ear ear-left"></div>
+                        <div class="bear-ear ear-right"></div>
+                        <div class="bear-leg leg-left"><span></span></div>
+                        <div class="bear-leg leg-right"><span></span></div>
+                        <div class="bear-body"></div>
+                        <div class="bear-arm arm-left"></div>
+                        <div class="bear-arm arm-right"></div>
+                        <div class="bear-head">
+                            <div class="ear-inner inner-left"></div>
+                            <div class="ear-inner inner-right"></div>
+                            <div class="bear-eye eye-left"></div>
+                            <div class="bear-eye eye-right"></div>
+                            <div class="bear-blush blush-left"></div>
+                            <div class="bear-blush blush-right"></div>
+                            <div class="bear-muzzle"></div>
+                            <div class="bear-nose"></div>
+                            <div class="bear-mouth"></div>
+
+                        </div>
+                        <div class="bear-outfit" id="bearOutfit">🎀</div>
+                        <div class="bear-accessory" id="bearAccessory">🎀</div>
+
+                      </div>
+                </div>
+                <div class="bear-caption">
+                    <h3 id="bearName">Sunny</h3>
+                    <p id="bearPersonality">Kind & curious</p>
+
+                </div>
+                <div class="preview-actions">
+                    <button class="secondary-button" id="randomButton">
+                        🎲Surprise me
+                    </button>
+                    <button class="primary-button" id="randomButton">
+                        Save my bear
+                    </button>
+                </div>
+                <p class="status-message" id="statusMessage" role="status" aria-live="polite"></p>
+
+            </section>
+            <section class="customizer">
+                <div class="custom-section">
+                    <h3><span>01.</span>Pick your fur</h3>
+                    <div class="fur-options" id="furOptions"></div>
+
+                </div>
+                <div class="custom-section">
+                    <h3><span>02.</span>Find an outfit</h3>
+                    <div class="option-grid" id="outfitOptions"></div>
+                </div>
+                <div class="custom-section">
+                    <h3><span>03.</span>Little extras</h3>
+                    <div class="option-grid" id ="accessoryOptions"></div>
+                </div>
+                <div class="custom-section">
+                    <h3><span>04.</span>What's their name?</h3>
+                    <label for="nameInput">Your bear's name</label>
+                    <input id="nameInput" max length="24"
+                        placeholder="Honey,Mochi,Clover..." autocomplete="off">
+                </div>
+                <div class="custom-section">
+                    <h3><span>05.</span>Their personality</h3>
+                    <label for="personalityInput">Choose their vibe</label>
+                    <select id="personalityInput">
+                        <option value="Kind & curious">Kind & curious</option>
+                        <option value="Sleepy & sweet">Sleepy & sweet</option>
+                        <option value="Brave & adventurous"> Brave & adventurous</option>
+                        <option value="Creative & dreamy">Creative & dreamy</option>
+                        <option value="Silly & playful">Silly & plaful</option>
+
+                    </select>
+                </div>
+                <button class="reset-button" id="resetButton">
+                    Start over
+                </button>
+            </section>
+            <section class="wardrobe page-section" id="wardrobe">
+                <div class="section-heading">
+                    <span class="eyebrow">THE LITTLE CLOSET</span>
+                    <h2> Every bear deserves a fit</h2>
+                    <p>More outfits, more ways to make your friend unique.</p>
+
+                </div>
+                <div class="wardrobe-grid" id="wardrobeGrid"></div>
+
+            </section>
+            <section class="adoption page-section" id="adoption">
+                <div class="adoption-card">
+                    <span class="eyebrow"> A SPECIAL LITTLE MOMENT</span>
+                    <h2>Ready to adopt your bear?</h2>
+                    <p>Give your creation a certificate to celebrate your new friend.</p>
+                    <button class="primary-button" id="certificateButton">
+                        Make an adopotion certificate
+
+                    </button>
+                    <div id="certificateArea"></div>
+
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>made with love, fluff, and a little imagination</p>
+            <a href="#studio">Back to the workshop</a>
+            
+        </footer>
+      </body>
+
+       </main>
+    </body> 
+</html> 
